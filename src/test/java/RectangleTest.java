@@ -1,4 +1,5 @@
 import org.junit.*;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -23,14 +24,11 @@ public class RectangleTest {
 
     @Test
     public void testRectangleException()        {
-        try {
-            Rectangle rectangle = new Rectangle();
-            double result = rectangle.getArea(-4.0, -1.0);
-        }
-        catch (Exception e) {
+        Throwable exception = Assertions.assertThrows(ArithmeticException.class,
+                () -> {new Rectangle().getPerimeter(1.0, 2.3);});
             final String expected = "Только положительные цифры";
-            assertEquals( expected, e.getMessage());
+            assertEquals( expected, exception.getMessage());
         }
     }
-}
+
 

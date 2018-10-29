@@ -1,4 +1,5 @@
 import org.junit.*;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -27,7 +28,6 @@ public class TriangleTest {
 
     @Test
     public void testTriangleException() {
-        {
             try {
                 Triangle triangle = new Triangle();
                 double result = triangle.getArea(-4.0, -1.0, -3.5);
@@ -38,4 +38,4 @@ public class TriangleTest {
             }
         }
     }
-}
+
