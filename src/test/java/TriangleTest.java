@@ -1,38 +1,41 @@
 import org.junit.*;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 import org.junit.runners.Parameterized;
 
 import java.util.Arrays;
 import java.util.Collection;
 
 import static junit.framework.TestCase.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class TriangleTest {
 
-    @Parameterized.Parameter
-    public /* NOT private */ double a = 6.3;
+    @DisplayName("Should calculate the correct area and perimeter")
+    @ParameterizedTest
+    @ValueSource(doubles = {6.3, 7.4, 6.4})
 
-    @Parameterized.Parameter
-    public /* NOT private */ double b = 7.4;
-
-    @Parameterized.Parameter
-    public /* NOT private */ double c = 6.4;
-
-
-    @Test
-    public void testTriangle()
+     void testTriangle(Double argument)
     {
         final Triangle triangle = new Triangle();
-        double result = triangle.getArea(a, b, c);
-        assertEquals(19.092730128245154, result);
-        double result4 = triangle.getPerimeter(a, b, c);
+        double result = triangle.getArea(argument, argument, argument);
+        assertEquals(17.186274138102178, result);
+        double result4 = triangle.getPerimeter(argument, argument, argument);;
         assertEquals(20.1, result4);
     }
 
-    @Test(expected = ArithmeticException.class)
+    @Test
     public void testTriangleException() {
-        Triangle triangle = new Triangle();
-        double result = triangle.getArea(-4.0, -1.0, -3.5);
-        assertEquals(50.26548245743669, result);
+        {
+            try {
+                Triangle triangle = new Triangle();
+                double result = triangle.getArea(-4.0, -1.0, -3.5);
+            }
+            catch (Exception e) {
+                final String expected = "Только положительные цифры";
+                assertEquals( expected, e.getMessage());
+            }
+        }
     }
-
 }
