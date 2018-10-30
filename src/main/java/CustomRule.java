@@ -5,7 +5,7 @@ import org.junit.runners.model.Statement;
 
 public class CustomRule implements TestRule {
 
-    private Rectangle rectangle;
+    private double rectangle;
     private double a;
     private double b;
 
@@ -15,7 +15,7 @@ public class CustomRule implements TestRule {
             public void evaluate() throws Throwable {
                 a = getRandom();
                 b = getRandom();
-                rectangle = new Rectangle(a,b);
+                rectangle = new Rectangle().getPerimeter(a,b);
                 base.evaluate();
             }
         };
@@ -27,6 +27,6 @@ public class CustomRule implements TestRule {
 
     public  double getA() {return a;}
     public  double getB() {return b;}
-    public  double getRectangle() {return rectangle;}
+    public double getRectangle() {return rectangle;}
 
 }

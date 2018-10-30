@@ -15,7 +15,6 @@ public class RectangleTest {
     @Rule
     public final CustomRule customRule = new CustomRule();
 
-
     @Test
     public void testRectangle()
     {

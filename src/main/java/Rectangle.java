@@ -1,4 +1,4 @@
-class Rectangle {
+class Rectangle  {
     public double getArea (Double firstSide, Double secondSide)    {
     if(firstSide < 0) {
         throw new ArithmeticException("Только положительные цифры");
