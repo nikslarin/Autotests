@@ -1,0 +1,24 @@
+https://www.raiffeisen.ru/
+1.//a[@class='button-invert button-with-icon banking g-premium-hide banking__btn']
+2.//li//a[contains(text(),'Карты')]
+3.//div[@class='informer__btn js-region-check-yes']
+4.//div[@class='currency-ibank currency-block__container']//div[@class='currency-block__row'][2]//h2[@class='currency--name cn-data'][2]
+5.//li//a[@href='/retail/servicequality/']
+
+https://www.raiffeisen.ru/retail/cards/debit/new/request_auth/?card=CS0200-1411
+6.//input[@id='form_f5174a1640']
+7.//input[@id='form_f5175a1640']
+8.//input[@id='form_f5176a1640']
+9.//input[@id='form_f5177a1640']
+10.//div[@class='checkbox-block']//label[@class='form-label checkbox-block__label']//span[@class='checkbox-block__span']
+11.//div[@class='b-block-row__item b-block-row__item--submit']
+
+https://www.raiffeisen.ru/retail/consumerloans/calculator/
+12.//h1[contains(text(),'Кредитный калькулятор')]
+13.//input[@id='form_f2353a1630_0']/ancestor::div[@class='radio-block']
+14.//input[@id='form_f2353a1630_1']/ancestor::div[@class='radio-block']
+15.//input[@id='form_f464a1630']
+16.//input[@id='form_f467a1630_1']/ancestor::div[@class='radio-block']
+17.//span[@class='js-calc-payment']
+18.//div[contains(text(),'Ежемесячный платеж')]/following-sibling::div[@class='b-calc-result__text--right']
+19.//div[contains(text(),'Cумма кредита с финансовой защитой')]/following-sibling::div[@class='b-calc-result__text--right']
