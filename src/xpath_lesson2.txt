@@ -1,0 +1,26 @@
+https://www.raiffeisen.ru
+1.//ul[@class='sec-menu']
+2.//a[contains(text(),'Ипотека')]
+3.//a[@href='/business/']//div[@class='slider-small__info']
+4.//a[@href='/corporate/r-dealer/']//div[@class='slider-small__info']
+
+https://www.raiffeisen.ru/retail/mortgageloans/refinansirovanie-kreditov-inyh-bankov/
+5.//div[@class='b-block-text__content']//a[contains(text(),'Оставить заявку')]
+6.//p[contains(text(),'срок кредитования')]/preceding-sibling::p[@class='property__title']
+7.//p[contains(text(),'максимальная сумма')]/preceding-sibling::p[@class='property__title']
+8.//li[@class='b-tabs__list-item' and @data-tab='tab-4']
+9.//div[@class='care__block-buttons']//a[@class='button' and @href='/retail/mortgageloans/program/request/']
+
+
+https://avia.yandex.ru/
+10.//input[@class='city-input_kb-xlarge__control' and @placeholder='Откуда']
+11.//span[@class='y-button__text' and contains(text(),'Найти')]
+12.//a[@class='offers-tabs_kb__tab']
+13.//a[@class='offers-tabs_kb__tab _current']
+14.//input[@class='city-input_kb-large__control' and @placeholder='Откуда']
+15.//input[@class='city-input_kb-large__control' and @placeholder='Куда']
+16.//input[@class='y-input_islet-large__control' and @name='options']
+17.//span[@class='share__icon']
+18.//tbody[@class='flight_list _init']
+19.//div[@class='flight_list__price']
+20.//div[@class='redirect-button_kb _init']//span[@class='y-button__text']
