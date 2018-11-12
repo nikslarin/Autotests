@@ -24,10 +24,15 @@ public class ScenarioFive extends BaseTest{
                 .getText());
         Assert.assertEquals("Вояж (Комфорт/Бизнес класс/Первый класс)", driver.findElement(By.xpath("//span[@role='combobox']//span[2]"))
                 .getText());
+        getDriver().findElement((By.xpath("//input[@placeholder='Фамилия']"))).clear();
         fillField(getDriver().findElement((By.xpath("//input[@placeholder='Фамилия']"))), "Иванов");
+        getDriver().findElement((By.xpath("//input[@placeholder='Имя']"))).clear();
         fillField(getDriver().findElement((By.xpath("//input[@placeholder='Имя']"))), "Иван");
+        getDriver().findElement((By.xpath("//input[@placeholder='Отчество']"))).clear();
         fillField(getDriver().findElement((By.xpath("//input[@placeholder='Отчество']"))), "Иванович");
+        getDriver().findElement((By.xpath("//input[@placeholder='Дата Рождения']"))).clear();
         fillField(getDriver().findElement((By.xpath("//input[@placeholder='Дата Рождения']"))), "05.05.1976");
+        getDriver().findElement((By.xpath("//div[text()='Номер телефона']/preceding-sibling::input"))).clear();
         fillField(getDriver().findElement((By.xpath("//div[text()='Номер телефона']/preceding-sibling::input"))), "9421234455");
         fillField(getDriver().findElement((By.xpath("//input[@placeholder='Электронная почта']"))), "gagaga@mail.ru");
         click(getDriver().findElement((By.xpath("//input[@data-label='Согласие на обработку персональных данных']/parent::label//span"))));
