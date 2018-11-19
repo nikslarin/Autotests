@@ -45,6 +45,10 @@ public class InsurancePage extends BasePageObject {
     @FieldName(name = "Дата рождения")
     public WebElement birthDate;
 
+    @FindBy(xpath = "//input[@placeholder='Электронная почта']")
+    @FieldName(name = "Электронная почта")
+    public WebElement email;
+
     @FindBy(xpath = "//div[text()='Номер телефона']/preceding-sibling::input")
     @FieldName(name = "Телефон")
     public WebElement phone;
