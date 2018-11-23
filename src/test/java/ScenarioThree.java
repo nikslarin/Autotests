@@ -12,7 +12,7 @@ public class ScenarioThree extends BaseTest {
     public void scenarioThree() {
 
         WebDriver driver = getDriver();
-        driver.get("https://online.raiffeisen.ru/demo/#/favourites");
+        driver.get("https://online.raiffeisen.ru/demo_new/#/favourites");
 
         click(getDriver().findElement((By.xpath("//icon-close[@class='one-click-popup__close icon']"))));
         click(getDriver().findElement((By.xpath("//a[@class='actions-menu__item actions-menu__item_transfer']"))));
