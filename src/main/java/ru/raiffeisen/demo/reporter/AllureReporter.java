@@ -1,8 +1,7 @@
-package demo_new.reporter;
+package ru.raiffeisen.demo.reporter;
 
-import demo_new.utils.DriverManager;
+import ru.raiffeisen.demo.pages.utils.DriverManager;
 import gherkin.formatter.model.Result;
-import io.qameta.allure.Allure;
 import io.qameta.allure.Attachment;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;

@@ -4,12 +4,9 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 import org.junit.runner.RunWith;
 
-    @RunWith(Cucumber.class)
-    @CucumberOptions(features = {"src/test/resources/"}, glue = {"ru.raiffeisen.demo_new"},
-    plugin = {"json:target/cucumber-report.json",
-            "pretty",
-            "html:target/cucumber-reports",
-            "rerun:rerun.txt"})
-
-    public class CucumberRunner {
+@RunWith(Cucumber.class)
+@CucumberOptions(features = {"src/test/resources/Mortgage.feature"}, glue = {"ru/raiffeisen/demo"},
+        plugin = {"pretty",
+                "ru.raiffeisen.demo.reporter.AllureReporter"})
+public class CucumberRunner {
 }

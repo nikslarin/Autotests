@@ -1,16 +1,15 @@
-package demo_new.pages;
+package ru.raiffeisen.demo.pages;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import demo_new.annotation.FieldName;
-import demo_new.utils.DriverManager;
+import ru.raiffeisen.demo.annotation.FieldName;
+import ru.raiffeisen.demo.pages.utils.DriverManager;
 
 import java.lang.reflect.Field;
 import java.util.Arrays;
@@ -18,7 +17,7 @@ import java.util.List;
 
 
 public abstract class BasePage {
-    WebDriverWait wait  = new WebDriverWait(DriverManager.getDriver(), 60);
+    WebDriverWait wait = new WebDriverWait(DriverManager.getDriver(), 10);
 
     public BasePage() {
         PageFactory.initElements(DriverManager.getDriver(), this);
@@ -35,13 +34,14 @@ public abstract class BasePage {
         click(element);
     }
 
+
     public abstract WebElement getField(String name) throws Exception;
 
     public WebElement getField(String name, String className) throws Exception {
         Class example = Class.forName(className);
         List<Field> fields = Arrays.asList(example.getFields());
-        for (Field field : fields){
-            if (field.getAnnotation(FieldName.class).name().equals(name)){
+        for (Field field : fields) {
+            if (field.getAnnotation(FieldName.class).name().equals(name)) {
                 return DriverManager.getDriver().findElement(By.xpath(field.getAnnotation(FindBy.class).xpath()));
             }
         }
@@ -49,20 +49,21 @@ public abstract class BasePage {
         return null;
     }
 
-    public void fillField(WebElement field, String value){
+    public void fillField(WebElement field, String value) {
         field.clear();
+        field.sendKeys(Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE, Keys.BACK_SPACE);
         field.sendKeys(value);
         field.sendKeys(Keys.TAB);
     }
 
 
-    public void click(WebElement element){
+    public void click(WebElement element) {
         wait.until(ExpectedConditions.visibilityOf(element)).click();
     }
 
-    public void selectMenuItem(List<WebElement> menuItems, String itemName){
-        for (WebElement item : menuItems ){
-            if (item.getText().equalsIgnoreCase(itemName)){
+    public void selectMenuItem(List<WebElement> menuItems, String itemName) {
+        for (WebElement item : menuItems) {
+            if (item.getText().equalsIgnoreCase(itemName)) {
                 item.click();
                 return;
             }
@@ -80,7 +81,6 @@ public abstract class BasePage {
         WebElement element = getField(name);
         return element.findElement(By.xpath("./../following-sibling::control-errors")).getText();
     }
-
 
 
 }
